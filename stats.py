@@ -12,8 +12,9 @@ def get_dictionary_of_characters(string):
     return characters
 
 def get_sorted_dictionaries(dictionary):
-    sorted_by_value = dict(sorted(dictionary.items(), key=lambda item: item[1], reverse=True))
-    sorted_dictionaries = []
-    for key, value in sorted_by_value.items():
-        sorted_dictionaries.append({'char': key, 'num': value})
-    return sorted_dictionaries
+    dictionaries = []
+    for key, value in dictionary.items():
+        dictionaries.append({'char': key, 'num': value})
+    
+    dictionaries.sort(reverse=True, key=lambda item: item["num"])
+    return dictionaries
